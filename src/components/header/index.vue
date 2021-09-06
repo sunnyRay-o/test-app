@@ -21,6 +21,7 @@ export default {
 };
 </script>
 
-<style>
-
+<style lang="scss">
+@import '~@/assets/css/public/header/index.scss';
+@import '~@/assets/css/public/mixin.scss';
 </style>

@@ -2,7 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Default from '../views/Default.vue';
 import Blank from '../views/Blank.vue';
-import ChangeCity from '../views/ChangeCity.vue';
+import Home from '../pages/Home.vue';
 
 Vue.use(VueRouter);
 
@@ -11,11 +11,11 @@ const routes = [
     path: '/',
     name: 'Default',
     component: Default,
-    childrens: [
+    children: [
       {
-        path: 'changeCity',
-        name: 'ChangeCity',
-        component: ChangeCity,
+        path: 'home',
+        name: 'Home',
+        component: Home,
       },
     ],
   },
