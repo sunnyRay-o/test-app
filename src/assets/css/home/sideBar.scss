@@ -1,0 +1,214 @@
+.side-bar-container {
+    width: 230px;
+    height: 480px;
+    box-sizing: border-box;
+    margin-left: 20px;
+    color: #646464;
+    position: relative;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+
+    >dl {
+
+        dt {
+            color: #222;
+            font-weight: bold;
+            height: 50px;
+            padding-top: 15px;
+            box-sizing: border-box;
+            font-size: 16px;
+            margin-left: 15px;
+            margin-bottom: 10px;
+        }
+
+        dd {
+            position: relative;
+            box-sizing: border-box;
+            padding: 2px 12px;
+            height: 26px;
+            cursor: pointer;
+
+            &:hover {
+                background: rgba(255, 150, 0, 0.08);
+                font-weight: bold;
+                color: #222;
+            }
+        }
+    }
+
+    .nav {
+        font-size: 13px;
+
+        dd>i {
+            font-family: 'meituan';
+            font-size: 14px;
+            font-style: normal;
+            opacity: 0.3;
+            margin-right: 11px;
+
+            &:before {
+                width: 14px;
+                height: 14px;
+                display: inline-block;
+            }
+        }
+
+        .food {
+            &:before {
+                content: "\e622";
+            }
+        }
+
+        .takeout {
+            &:before {
+                content: "\e630";
+            }
+        }
+
+        .hotel {
+            &:before {
+                content: "\e62a";
+            }
+        }
+
+        .homestay {
+            &:before {
+                content: "\e631";
+            }
+        }
+
+        .movie {
+            &:before {
+                content: "\e62c";
+                position: relative;
+                left: -2px;
+            }
+        }
+
+        .airport {
+            &:before {
+                content: "\e632";
+            }
+        }
+
+        .ktv {
+            &:before {
+                content: "\e627";
+            }
+        }
+
+        .life {
+            &:before {
+                content: "\e633";
+            }
+        }
+
+        .hair {
+            &:before {
+                content: "\e626";
+                transform: scale(0.7);
+            }
+        }
+
+        .marry {
+            &:before {
+                content: "\e629";
+            }
+        }
+
+        .offspring {
+            &:before {
+                content: "\e623";
+            }
+        }
+
+        .sport {
+            &:before {
+                content: "\e62b";
+            }
+        }
+
+        .furniture {
+            &:before {
+                content: "\e625";
+            }
+        }
+
+        .study {
+            &:before {
+                content: "\e624";
+            }
+        }
+
+        .health {
+            &:before {
+                content: "\e628";
+            }
+        }
+
+        .bar {
+            &:before {
+                content: "\e621";
+            }
+        }
+
+        .arrow {
+            width: 4px;
+            height: 4px;
+            border-bottom: 1px solid #222;
+            border-right: 1px solid #222;
+            transform: rotate(-45deg);
+            display: block;
+            position: absolute;
+            right: 13px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+    }
+
+    .popup-detail {
+        position: absolute;
+        left: 230px;
+        top: 60px;
+        width: 400px;
+        height: 416px;
+        background: #fff;
+        color: #666;
+        padding: 0 30px;
+        box-sizing: border-box;
+
+        dl {
+            dt {
+                margin-top: 24px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid #e5e5e5;
+                position: relative;
+                color: #222;
+                &::after {
+                    content: '更多>';
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    color: #999;
+                    font-size: 12px;
+                    margin-right: 6px;
+                    &:hover {
+                        color: #fe8c00;
+                        cursor: pointer;
+                    }
+                }
+            }
+            dd {
+                color: #999;
+                margin: 10px 16px 0 0;
+                font-size: 12px;
+                display: inline-block;
+                &:hover {
+                    color: #fe8c00;
+                }
+            }
+        }
+
+    }
+}
