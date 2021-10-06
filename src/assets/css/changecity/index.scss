@@ -1,0 +1,17 @@
+.change-city-container {
+    width: 1190px;
+    margin: 0 auto;
+    background: #fff;
+    margin-top: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    .hot-city-container {
+        padding: 30px 0;
+        border-top: 1px solid #e5e5e5;
+    }
+    .all-cities-container {
+        border-top: 1px solid #e5e5e5;
+    }
+}

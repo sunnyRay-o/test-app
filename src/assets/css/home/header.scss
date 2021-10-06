@@ -1,0 +1,48 @@
+.m-header {
+    height: 44px;
+    font-size: 14px;
+    line-height: 44px;
+    color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    position: relative;
+    dl {
+        display: flex;
+        dt {
+            font-family: "MFShangHei-Regular" !important;
+            font-size: 18px;
+            margin: 0 10px 0 13px;
+        }
+        dt,dd {
+            padding: 0 5px;
+            cursor: pointer;
+        }
+        dd {
+            position: relative;
+        }
+        dd.all {
+            position: absolute;
+            right: 0;
+            margin-right: 12px;
+        }
+        dd::before {
+            display: none;
+            content: '';
+            width: 2px;
+            height: 0px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #fff;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-left-color: transparent;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        dd.active::before {
+            display: block;
+        }
+    }
+}

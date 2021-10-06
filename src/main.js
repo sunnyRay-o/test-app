@@ -5,8 +5,16 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 import './assets/css/reset.css';
+import './assets/css/main.css';
 
 Vue.config.productionTip = false;
+
+Vue.directive('documentClick', {
+  bind(el, binding) {
+    document.addEventListener('click', binding.value, false);
+  },
+});
+
 Vue.use(ElementUI);
 new Vue({
   router,

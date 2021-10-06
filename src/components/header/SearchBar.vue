@@ -18,6 +18,7 @@
               placeholder="请输入商家或地点"
               @focus="onFocus"
               @blur="onBlur"
+              @input="onInput"
               >
               </el-input>
               <el-button class="my-btn" type="warning" icon="el-icon-search"></el-button>
@@ -25,7 +26,12 @@
             <div class="hot-search" v-if="isHotSearch">
                 <dl>
                   <dt>热门搜索</dt>
-                  <router-link to="/" v-for="(item, index) in hotSearchWords" :key="index">
+                  <router-link :to="{
+                    name: 'Product',
+                    params: {
+                      name: item
+                    }
+                  }" v-for="(item, index) in hotSearchWords" :key="index">
                     <dd>{{item}}</dd>
                   </router-link>
                 </dl>
@@ -46,7 +52,12 @@
           <el-row>
             <div class="hot-words">
               <router-link
-              to="/"
+              :to="{
+                name: 'Product',
+                params: {
+                  name: item,
+                }
+              }"
               v-for="(item, index) in suggestList"
               :key="index">{{item}}</router-link>
             </div>
@@ -58,15 +69,22 @@
 </template>
 
 <script>
+import api from '@/api';
+
 export default {
   data() {
     return {
       searchWord: '',
       isFocus: false,
-      searchList: ['火锅', '火锅店', '火锅水', '火锅肉', '火锅', '火锅'],
-      hotSearchWords: ['酒店旅游', '酒店旅游', '酒店旅游', '酒店旅游'],
-      suggestList: ['七天连锁酒店', '七天连锁酒店', '七天连锁酒店', '七天连锁酒店'],
+      searchList: [],
+      hotSearchWords: [],
+      suggestList: [],
     };
+  },
+  async created() {
+    const { data } = await api.getSearchHotWords();
+    this.suggestList = data;
+    this.hotSearchWords = data;
   },
   computed: {
     isSearchList() {
@@ -85,6 +103,10 @@ export default {
       setTimeout(() => {
         self.isFocus = false;
       }, 200);
+    },
+    async onInput() {
+      const resp = await api.getSearchList();
+      this.searchList = resp.data.list.filter((item) => item.indexOf(this.searchWord) !== -1);
     },
   },
 };

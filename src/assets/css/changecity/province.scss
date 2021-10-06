@@ -1,0 +1,26 @@
+.province-container {
+    display: flex;
+    padding-bottom: 30px;
+    h2 {
+        color: #333;
+        font-size: 16px;
+        margin-right: 20px;
+        font-weight: 500;
+        line-height: 40px;        
+    }
+    .search-box {
+        margin-left: 40px;
+        span {
+            font-size: 16px;
+            color: #333;
+            font-weight: 500;
+            margin-right: 20px;
+        }
+        .el-input.el-input--suffix.is-focus {
+            border-color: #e5e5e5;
+            input {
+                border-color: #e5e5e5;
+            }
+        }
+    }
+}

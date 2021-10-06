@@ -1,0 +1,215 @@
+.login-page {
+    width: 980px;
+    margin: 0 auto;
+
+    header {
+        margin: 40px 0px 30px;
+
+        a.logo {
+            background: url('//s0.meituan.net/bs/file/?f=fe-sso-fs:build/assets/logo.6a89007.png') no-repeat left top/contain;
+            display: block;
+            width: 130px;
+            height: 47px;
+            text-indent: -9999px;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+    }
+
+    article {
+        display: flex;
+
+        .banner {
+            width: 480px;
+            height: 370px;
+            margin-right: 115px;
+            flex-shrink: 0;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .login-form {
+            width: 270px;
+            font-size: 14px;
+
+            .validate-info {
+                margin-bottom: 12px;
+                padding: 10px;
+                border: 1px solid #f5d8a7;
+                background: #fff6db;
+                border-radius: 2px;
+                min-height: 18px;
+                line-height: 18px;
+                font-size: 12px;
+                color: #666;
+                box-sizing: border-box;
+                visibility: hidden;
+
+                i {
+                    font-size: 20px;
+                    color: #fe8c00;
+                    vertical-align: bottom;
+                    margin-right: 5px;
+                }
+
+                &.show {
+                    visibility: visible;
+                }
+            }
+
+            .form-item {
+                padding-bottom: 12px;
+
+                &.form-title {
+                    color: #666;
+                }
+
+                &.form-input {
+                    input {
+                        &:focus {
+                            border-color: #FFC300;
+                        }
+                    }
+
+                    .input {
+                        input {
+                            background: #e8f0fe;
+                            background-clip: content-box;
+                        }
+                    }
+
+                    &.form-userName {
+                        .prompt-border {
+                            input {
+                                border-color: #f76120;
+
+                            }
+                        }
+                    }
+                }
+
+                &.forget-password {
+                    color: #f38c00;
+                    font-size: 12px;
+                    text-align: right;
+                }
+
+                &.form-login-btn {
+                    .el-button {
+                        color: #000;
+                        font-weight: bold;
+                        width: 100%;
+                        background-image: linear-gradient(135deg, #FFD000 0, #FFBD00 100%);
+                        border: none;
+                    }
+                }
+
+                &.signup-guide {
+                    color: #666;
+                    font-size: 14px;
+
+                    a {
+                        color: #fe8c00;
+                    }
+                }
+
+                &.user-agreement {
+                    display: flex;
+
+                    .el-radio {
+                        margin: 0;
+                        width: 17px;
+                        height: 17px;
+                        text-align: center;
+                        line-height: 17px;
+                    }
+                }
+
+                .user-agreement-content {
+                    color: rgba(0, 0, 0, .5);
+                    font-size: 14px;
+                    font-weight: 400;
+
+                    a {
+                        color: #fe8c00;
+                    }
+                }
+
+                &.other-login-methods {
+                    position: relative;
+
+                    .text {
+                        color: #666;
+                        font-size: 14px;
+                        position: absolute;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        top: 0;
+                        z-index: 100;
+                        background: #fff;
+                        padding: 0 10px;
+                        white-space: nowrap;
+                    }
+
+                    .login-methods {
+                        border-top: 1px solid #ccc;
+                        padding-top: 30px;
+                        text-align: center;
+                        display: flex;
+                        justify-content: center;
+                        padding-right: 10px;
+
+                        i {
+                            display: block;
+                            width: 18px;
+                            height: 18px;
+                            margin-right: 20px;
+                            background: url('https://s0.meituan.net/bs/file/?f=fe-sso-fs:build/assets/sp-normal.cb7cf7c.png') no-repeat;
+
+                            &.qq {
+                                background-position: -1250px -491px;
+                            }
+
+                            &.weibo {
+                                background-position: -1250px -545px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        color: #999;
+        font-size: 12px;
+
+        .footer-nav {
+            padding: 12px 0;
+            margin-bottom: 20px;
+            border: 1px solid #eee;
+            border-left: none;
+            border-right: none;
+
+            a {
+                padding: 0 16px;
+                margin: 5px 0;
+                border-right: 1px solid #eee;
+
+                &:first-child {
+                    padding-left: 0;
+                }
+
+                &:last-child {
+                    border: none;
+                }
+            }
+        }
+
+        .copyright {
+            padding-bottom: 20px;
+        }
+    }
+}

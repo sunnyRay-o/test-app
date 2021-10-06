@@ -3,19 +3,22 @@
     <div class="left">
       <div class="position">
         <i class="el-icon-location"></i>
-        <span>北京</span>
+        <span>{{position.name}}</span>
         <router-link :to="{
           name: 'ChangeCity',
         }" class="change-city">切换城市</router-link>
         <span>[</span>
-        <a href="#" class="address change-city">门头沟区</a>
-        <a href="#" class="address change-city">大厂回族自治县</a>
-        <a href="#" class="address change-city">廊坊</a>
+        <a href="#"
+        class="address change-city"
+        v-for="item in nearCity"
+        :key="item.id">{{item.name}}</a>
         <span>]</span>
       </div>
       <div class="login">
-        <router-link to="/" class="checked">立即登录</router-link>
-        <router-link to="/">注册</router-link>
+        <router-link :to="{
+          name: 'Login',
+        }" class="checked">{{username ? username : '立即登录'}}</router-link>
+        <a href="#" @click="register">{{username ? '退出' : '注册'}}</a>
       </div>
     </div>
     <div class="nav">
@@ -178,8 +181,42 @@
 </template>
 
 <script>
-export default {
+import { mapState, mapActions, mapMutations } from 'vuex';
+import api from '@/api';
 
+export default {
+  data() {
+    return {
+      nearCity: [],
+    };
+  },
+  computed: mapState(['position', 'username']),
+  watch: {
+    position() {
+      this.nearCity = this.position.nearCity;
+    },
+  },
+  async created() {
+    // 获取当前位置信息
+    if (this.position.name) {
+      return;
+    }
+    const { data: position } = await api.getCurrentPosition();
+    this.setPosition(position);
+    this.nearCity = position.nearCity;
+  },
+  methods: {
+    ...mapActions(['setPosition']),
+    ...mapMutations(['setUsername']),
+    register() {
+      if (this.username) {
+        this.$router.push('/');
+        this.setUsername('');
+      } else {
+        this.$router.push({ name: 'Register' });
+      }
+    },
+  },
 };
 </script>
 

@@ -2,9 +2,14 @@
   <div class="side-bar-container">
     <dl class="nav" @mouseleave="onWrapLeave">
       <dt>全部分类</dt>
-      <dd v-for="(item, index) in sideBarList" :key="index" @mouseenter="onItemEnter(item)">
-        <i :class="item.icon"></i>
-        {{ item.text }}
+      <dd
+      v-for="(item, index) in sideBarList"
+      :key="index"
+      @mouseenter="onItemEnter(item)"
+      :class="{'hot': item.hot}"
+      >
+        <i :class="item.type"></i>
+        {{ item.name }}
         <span class="arrow"></span>
       </dd>
     </dl>
@@ -13,45 +18,41 @@
     v-if="detail"
     @mouseenter="onPopupEnter"
     @mouseleave="onPopupLeave">
-      <dl v-for="(item, index) in detail.children" :key="index">
-        <dt><router-link to="/">{{item.title}}</router-link></dt>
+    <!-- {{detail.items}} -->
+      <dl v-for="(sub, index) in detail.items" :key="index">
+        <dt><router-link to="/">{{sub.title}}</router-link></dt>
         <dd
-        v-for="(child, index) in item.childs"
-        :key="index"><router-link to="/">{{child}}</router-link></dd>
+        v-for="(child, i) in sub.items"
+        :key="i"><router-link to="/">{{child}}</router-link>
+        </dd>
       </dl>
     </div>
   </div>
 </template>
 
 <script>
+import api from '@/api';
+
 export default {
   data() {
     return {
       detail: null,
       timer: null,
-      sideBarList: [
-        {
-          icon: 'food',
-          text: '美食',
-          children: [
-            {
-              title: '美食',
-              childs: ['代金券', '甜点', '饮品', '火锅', '自助餐', '小吃', '快餐', '海鲜素食台湾/客家菜创意菜汤', '粥', '炖菜蒙餐新疆菜', '其他美食京菜鲁菜'],
-            },
-          ],
-        },
-        {
-          icon: 'takeout',
-          text: '外卖',
-          children: [
-            {
-              title: '外卖',
-              childs: ['美团外卖'],
-            },
-          ],
-        },
-      ],
+      sideBarList: [],
     };
+  },
+  async created() {
+    let { data } = await api.getLeftMenu();
+    data = data.map((item) => {
+      if (item.type === 'takeout') {
+        return {
+          ...item,
+          hot: true,
+        };
+      }
+      return item;
+    });
+    this.sideBarList = data;
   },
   methods: {
     onItemEnter(item) {
@@ -66,8 +67,8 @@ export default {
     onPopupEnter() {
       clearTimeout(this.timer);
     },
-    onPopupLeave(item) {
-      this.detail = item;
+    onPopupLeave() {
+      this.detail = null;
     },
   },
 };

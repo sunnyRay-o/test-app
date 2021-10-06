@@ -38,12 +38,45 @@
         <img src="http://p0.meituan.net/codeman/e473bb428f070321269b23370ff02ba956209.jpg" alt="">
       </el-col>
       <el-col :span="5" class="register">
+        <div class="setting" v-if="username">
+          <i class="iconfont icon-shezhi"></i>
+        </div>
         <div class="avatar">
           <img src="https://s0.meituan.net/bs/fe-web-meituan/e350c4a/img/avatar.jpg" alt="">
         </div>
-        <div>Hi！你好</div>
-        <p><el-button round class="btn logon">注册</el-button></p>
-        <p><el-button round class="btn login">立即登录</el-button></p>
+        <div :class="{fontWeight: username}">{{username ? username : 'Hi 你好'}}</div>
+        <template v-if="!username">
+          <p><el-button round class="btn logon">
+            <router-link :to="{name: 'Login'}">登录</router-link></el-button></p>
+          <p><el-button round class="btn login">
+            <router-link :to="{name: 'Register'}">注册</router-link></el-button></p>
+        </template>
+        <template v-if="username">
+          <nav class="user-info-nav">
+            <a href="#" class="nav-item">
+              <i class="iconfont icon-dingdan"></i>
+              <span class="desc">我的订单</span>
+            </a>
+            <a href="#" class="nav-item">
+              <i class="iconfont icon-shoucang"></i>
+              <span class="desc">我的收藏</span>
+            </a>
+            <a href="#" class="nav-item">
+              <i class="iconfont icon-icon_A"></i>
+              <span class="desc">抵用券</span>
+
+            </a>
+            <a href="#" class="nav-item">
+              <i class="iconfont icon-yue01"></i>
+              <span class="desc">余额</span>
+
+            </a>
+            <a href="#" class="nav-item">
+              <i class="iconfont icon-gengduo"></i>
+              <span class="desc">更多</span>
+            </a>
+          </nav>
+        </template>
       </el-col>
     </el-row>
     <el-row class="last-banner">
@@ -71,15 +104,19 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   data() {
     return {
       imgList: ['https://p1.meituan.net/travelcube/01d2ab1efac6e2b7adcfcdf57b8cb5481085686.png', 'http://p0.meituan.net/codeman/daa73310c9e57454dc97f0146640fd9f69772.jpg', 'http://p0.meituan.net/codeman/a97baf515235f4c5a2b1323a741e577185048.jpg', 'http://p0.meituan.net/codeman/33ff80dc00f832d697f3e20fc030799560495.jpg'],
     };
   },
+  computed: mapState(['username']),
 };
 </script>
 
 <style>
+@import '//at.alicdn.com/t/font_2807291_2m8skveo6sd.css';
 
 </style>

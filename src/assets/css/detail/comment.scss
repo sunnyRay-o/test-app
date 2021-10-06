@@ -1,0 +1,108 @@
+@import '~@/assets/css/public/mixin.scss';
+.comment-container {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    .header {
+        @include clearfix;
+        .comment-num {
+            float: left;
+            color: #222;
+            font-size: 20px;
+        }
+        .header-nav {
+            float: right;
+            color: #999;
+            font-size: 12px;
+            a.item {
+                margin-left: 20px;
+                &.active {
+                    color: #00c9b3;
+                }
+            }
+        }
+    }
+    .content {
+        border: 1px solid #e5e5e5;
+        color: #666;
+        background: #fff;
+        border-radius: 4px;
+        margin-top: 8px;
+        padding: 0 20px 40px;
+        position: relative;
+        ul {
+            li {
+                margin-top: 30px;
+                display: flex;
+                .avatar {
+                    margin-right: 20px;
+                    img {
+                        width: 60px;
+                        height: 60px;
+                        border-radius: 50%;
+                    }
+                }
+                .desc {
+                    padding-bottom: 100px;
+                    flex-grow: 1;
+                    line-height: 1.5;
+                    border-bottom: 1px solid #e5e5e5;
+                    .username {
+                        font-size: 16px;
+                        color: #222;
+                    }
+                    .comment-text {
+                        color: #666;
+                        font-size: 14px;
+                        margin-top: 13px;
+                    }
+                    .score-date {
+                        display: flex;
+                        width: 100%;
+                        align-items: center;
+                        .date {
+                            color: #999;
+                            font-size: 12px;
+                            text-align: right;
+                            flex-grow: 1;
+                        }
+                    }
+                    .picture {
+                        margin-top: 10px;
+                        a {
+                            &:first-child {
+                                margin-left: 0;
+                            }
+                            margin: 10px;
+                            img {
+                                width: 140px;
+                                height: 140px;
+                            }
+                        }
+                    }
+                    .operation {
+                        position: absolute;
+                        right: 20px;
+                        bottom: 70px;
+                        font-size: 12px;
+                        color: #666;
+                        display: flex;
+                        cursor: pointer;
+                        &.active {
+                          color: #31bbac;
+                          .good {
+                            background: url('https://s0.meituan.net/bs/file/?f=meis/meishi.web:assets/73408bd03eeb3096.png@9f5cb6a');
+                          }
+                        }
+                        .good {
+                            display: block;
+                            margin-right: 6px;
+                            width: 15px;
+                            height: 16px;
+                            background: url('https://s0.meituan.net/bs/file/?f=meis/meishi.web:assets/a9850ffbcbd6b5e6.png@9f5cb6a') center/100% 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

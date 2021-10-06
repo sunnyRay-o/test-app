@@ -1,0 +1,76 @@
+.homestay-container {
+    margin-top: 40px;
+
+    .homestay-header {
+        background: linear-gradient(to right, rgb(243, 182, 74) 2%, rgb(242, 197, 69) 97%) rgb(243, 182, 74);
+    }
+
+    .homestay-content {
+        .el-card {
+            padding: 20px 0 0 20px;
+
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+
+                li.item {
+                    justify-content: flex-start;
+                    margin-right: 18px;
+                    padding-bottom: 25px;
+
+                    .desc {
+                        .title {
+                            margin: 7px 0;
+                            width: 297px;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            color: #222;
+                        }
+
+                        .detail {
+                            color: #999;
+                            font-size: 12px;
+                        }
+
+                        .price {
+                            .price-icon {
+                                font-size: 14px;
+                            }
+
+                            font-size: 22px;
+                            color: #ff6600;
+                            padding: 4px 0;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+        }
+
+        .img {
+            position: relative;
+
+            img {
+                width: 370px;
+                height: 208px;
+                border-radius: 4px;
+            }
+
+            .avatar {
+                width: 52px;
+                height: 52px;
+                position: absolute;
+                bottom: -26px;
+                right: 15px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border: 2px solid #fff;
+                    box-sizing: border-box;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}

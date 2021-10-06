@@ -1,6 +1,6 @@
 .side-bar-container {
     width: 230px;
-    height: 480px;
+    height: 460px;
     box-sizing: border-box;
     margin-left: 20px;
     color: #646464;
@@ -38,7 +38,30 @@
 
     .nav {
         font-size: 13px;
-
+        dd {
+            height: 26px;
+            line-height: 26px;
+        }
+        .hot {
+            position: relative;
+            &:hover::before {
+                background-image: linear-gradient(to bottom right,#FFD000,#FFBD00);
+                opacity: 1;
+                font-weight: 500;
+            }
+            &::before {
+                content: 'HOT';
+                color: #222;
+                background: #fff3cc;
+                padding: 0 7px;
+                margin-left: 5px;
+                position: absolute;
+                top: 5%;
+                left: 70px;
+                transform: scale(0.8);
+                border-radius: 10px;
+            }
+        }
         dd>i {
             font-family: 'meituan';
             font-size: 14px;
@@ -56,18 +79,21 @@
         .food {
             &:before {
                 content: "\e622";
+                color: #ff8200;
             }
         }
 
         .takeout {
             &:before {
                 content: "\e630";
+                color: #ffb500;
             }
         }
 
         .hotel {
             &:before {
                 content: "\e62a";
+                color: #9B5E3E;
             }
         }
 
@@ -177,6 +203,7 @@
         color: #666;
         padding: 0 30px;
         box-sizing: border-box;
+        z-index: 100;
 
         dl {
             dt {
@@ -193,6 +220,7 @@
                     color: #999;
                     font-size: 12px;
                     margin-right: 6px;
+                    cursor: pointer;
                     &:hover {
                         color: #fe8c00;
                         cursor: pointer;

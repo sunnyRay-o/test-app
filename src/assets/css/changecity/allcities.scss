@@ -1,0 +1,68 @@
+.all-cities-container {
+    .alphabet {
+        padding: 30px 0;
+        display: flex;
+        h2 {
+            color: #333;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .list {
+            display: flex;
+            .item {
+                width: 25px;
+                height: 25px;
+                margin: 0 10px;
+                font-size: 15px;
+                color: #666;
+                padding-top: 3px;
+                box-sizing: border-box;
+                text-align: center;
+                cursor: pointer;
+                &:hover {
+                    color: #222;
+                    background: #f8f8f8;
+                    font-weight: 500;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+    .city-area-wrap {
+        padding: 13px 30px 13px 10px;
+        border-radius: 10px;
+        transition: background 500ms ;
+        display: flex;
+        &:hover {
+            background: #f8f8f8;
+        }
+        .city-list {
+            display: flex;
+            flex-wrap: wrap;
+            .city-item {
+                justify-content: flex-start;
+                margin: 10px 20px;
+                font-size: 14px;
+                color: #666;
+                a:hover {
+                    color: #222;
+                    font-weight: 500;
+                }
+                &.active {
+                    color: #ff6600;
+                }
+            }
+        }
+        h3.initial-letter {
+            background: #ffd000;
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            color: #222;
+            text-align: center;
+            border-radius: 50%;
+            line-height: 40px;
+            flex-shrink: 0;
+        }
+    }
+}

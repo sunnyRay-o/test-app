@@ -1,0 +1,27 @@
+.product-list-container {
+    background: #fff;
+    margin-top: 10px;
+    padding: 20px;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    .navbar {
+        margin-bottom: 10px;
+        ul {
+            display: flex;
+            li {
+                min-width: 96px;
+                font-size: 14px;
+                color: #666;
+                &:first-child {
+                    color: #222;
+                    & span {
+                      padding-left: 0;  
+                    }
+                }
+                span {
+                    padding: 0 10px;
+                }
+            }
+        }
+    }
+}

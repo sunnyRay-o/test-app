@@ -1,0 +1,117 @@
+.movie-container {
+    margin-top: 40px;
+    overflow: hidden;
+    .movie-header {
+        background: linear-gradient(to right, rgb(250, 60, 104) 2%, rgb(254, 70, 77) 97%) rgb(250, 60, 104);
+    }
+    .movie-content {
+        padding-left: 10px;
+        padding-top: 1px;
+        .carousel-btn {
+            width: 38px;
+            height: 38px;
+            background: #333;
+            opacity: 0;
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 38px;
+            font-weight: bold;
+            position: absolute;
+            z-index: 100;
+            transition: all .5s;
+            cursor: pointer;
+            &.left-btn {
+                left: 0;
+                top: 50%;
+                margin-top: -19px;
+            }
+            &.right-btn {
+                right: 0;
+                top: 50%;
+                margin-top: -19px;
+            }
+        } 
+        &:hover .carousel-btn {
+            opacity: .8;
+        }
+        ul {
+            width: 100000px;
+            height: 100%;
+            display: flex;
+            position: relative;
+            li {
+                width: 214px;
+                height: 297px;
+                margin-right: 19px;
+                font-size: 16px;
+                position: relative;
+                color: #fff;
+                &.tag::after {
+                    content: '';
+                    display: block;
+                    width: 40px;
+                    height: 20px;
+                    background: url('https://s0.meituan.net/bs/fe-web-meituan/9d1997a/img/3d.png') no-repeat center/100%;
+                    position: absolute;
+                    left: -6px;
+                    top: 10px;
+                }
+                &:nth-of-type(5n) {
+                    margin-right: 50px;
+                }
+                img {
+                    width: 100%;
+                    border-radius: 4px;
+                }
+                .desc {
+                    width: 100%;
+                    height: 100px;
+                    position: absolute;
+                    bottom: 0px;
+                    color: #fff;
+                    padding-left: 10px;
+                    box-sizing: border-box;
+                    background-image: linear-gradient(180deg, rgba(0,0,0,0.00) 0%, rgba(29,45,55,0.80) 99%);
+                    border-bottom-left-radius: 4px;
+                    border-bottom-right-radius: 4px;
+                    .person-number {
+                        margin-top: 50px;
+                        font-size: 12px;
+                        .num {
+                            font-size: 16px;
+                            color: #fd9827;
+                            font-weight: bold;
+                        }
+                    }
+                    .title {
+                        width: 6em;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                }
+                .btn {
+                    background-color: #ff4949;
+                    padding: 2px 12px 3px 12px;
+                    border-radius: 100px;
+                    font-size: 14px;
+                    line-height: 20px;
+                    position: absolute;
+                    right: 10px;
+                    bottom: 10px;
+                }
+                .mask {
+                    position: absolute;
+                    width: 100%;
+                    height: 100px;
+                    // background-image: linear-gradient(-180deg, rgba(0,0,0,0.00) 0%, rgba(29,45,55,0.80) 99%);
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+}

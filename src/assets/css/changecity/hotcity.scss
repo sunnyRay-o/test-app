@@ -1,0 +1,20 @@
+.hot-city-container {
+    display: flex;
+    h2 {
+        font-weight: 500;
+        font-size: 16px;
+        color: #333;
+    }
+    .city-list {
+        display: flex;
+        .item {
+            margin: 0 20px;
+            font-size: 14px;
+            color: #666;
+            a:hover {
+                color: #222;
+                font-weight: 500;
+            }
+        }
+    }
+}
